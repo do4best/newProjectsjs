@@ -14,12 +14,12 @@ function Textcard({title,content,subtitle,onClick,onClickTrash}) {
 
             <div onClick={onClick} className={`card ${s.container}`} style={{borderColor:isHovered?"#0d5efd":"transparent"}} onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}>
                 <div className={`card-body ${s.title_row}`} >
-                    <h5 className="card-title">{title}</h5>
+                    <h5 className="card-title">{title} </h5>
 <Trash size={25} onMouseEnter={()=>setIsTrashHovered(true)} onMouseLeave={()=>setIsTrashHovered(false)} style={{color:isTrashHovered?"#FF7373":"#b8b8"}} onClick={onClickTrash_}/>
-                    <h6 className={`card-subtitle mb-2 text-body-secondary ${s.subtitle}`}>{subtitle}</h6>
+                </div>    <h6 className={`card-subtitle mb-2 text-body-secondary `}>{subtitle}</h6>
                     <p className={`card-text ${s.text_content}`}>{content}</p>
 
-                </div>
+
             </div>
         </>
     );

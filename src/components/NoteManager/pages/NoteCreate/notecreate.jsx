@@ -1,9 +1,10 @@
 import React from 'react';
+import NoteForm from "../NoteForm/noteForm.jsx";
 
 function Notecreate(props) {
     return (
         <>
-            <h1>Note Create</h1>
+            <NoteForm title={"New Note"}/>
         </>
     );
 }
