@@ -23,18 +23,18 @@ function NoteForm({title,onClickEdit,onClickDelete,onSubmit}) {
     const titleInput=(
         <>
             <label htmlFor="" className="form-control">Title</label>
-            <input onChange={""} type="text" name={"title"} className={"form-control"}/>
+            <input onChange={updateFormValue} type="text" name={"title"} className={"form-control"}/>
         </>
     )
     const contentInput=(
         <>
             <label htmlFor="" className="form-control">Content</label>
-            <textarea onChange={""} type="text" name={"content"} className={"form-control"} rows={"5"}/>
+            <textarea onChange={updateFormValue} type="text" name={"content"} className={"form-control"} rows={"5"}/>
         </>
     )
     const submitBtn =(
         <div>
-            <div className="btn btn-primary" onClick={()=>  updateFormValue}>Submit</div>
+            <div className="btn btn-primary" onClick={()=>  onSubmit(formValue)}>Submit</div>
         </div>
     )
     return (
@@ -50,7 +50,7 @@ function NoteForm({title,onClickEdit,onClickDelete,onSubmit}) {
                 </div>
                 <div className={`mb-3 ${s.title_input_container}`}>{titleInput}</div>
                 <div className={"mb-3"}>{contentInput}</div>
-                {onSubmit && {submitBtn}}
+                 {onSubmit && submitBtn}
             </div>
         </>
     );

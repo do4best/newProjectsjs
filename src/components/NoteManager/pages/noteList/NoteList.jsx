@@ -12,7 +12,7 @@ return(
         {noteList.map((note)=>{
             return(
                 <div className={s.card_container}>
-                    <Textcard title={note.title} content={note.content} subtitle={note.created_at}
+                    <Textcard  title={note.title} content={note.content} subtitle={note.created_at}
                               onClick={()=>navigate("/note/"+note.id)} onClickTrash={()=>alert("noteTrash")}/>
 
                 </div>
