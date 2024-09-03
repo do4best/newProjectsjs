@@ -1,14 +1,30 @@
 import React, {useState} from 'react';
 import {PencilFill, TrashFill} from "react-bootstrap-icons";
 import s from './sytle.module.css';
+import {ValidatryService} from "../../api/velidatorService.js";
+
+const VALIDATOR={
+    title:(value)=>{
+        return ValidatryService.min(value,3) || ValidatryService.max(value,20)
+    },
+    content:(value)=>{
+          return ValidatryService.min(value,2)|| ValidatryService.max(value,200)
+    }
+}
 
 function NoteForm({title,onClickEdit,onClickDelete,onSubmit}) {
     const [formValue,setFormValue] = useState({title:"",content:""})
+    const [formErrors,setFormErrors] = useState({title:undefined,content:undefined})
     const updateFormValue=(e)=>{
         const name = e.target.name;
         const value = e.target.value;
         setFormValue({...formValue,[name]:value})
+        validateIt(name,value)
     }
+    const validateIt=(fieldName,fieldValue )=>{
+setFormErrors({...formErrors,[fieldName]:VALIDATOR[fieldName](fieldValue)})
+    }
+
     const actionIcons=(
         <>
 <div className="col-1">
