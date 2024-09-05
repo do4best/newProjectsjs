@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import {addNote} from "../../notes-slice.js";
 import {useNavigate} from "react-router-dom";
 
-function Notecreate(props) {
+function Notecreate() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const submit=(formvalue)=>{

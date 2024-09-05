@@ -13,9 +13,15 @@ return (await axios.post(`${BASE_URL}`,note)).data
         return (await axios.get(`${BASE_URL}/${noteId}`)).data
     }
     static async deleteById(noteId){
-        return (await axios.delete(`${BASE_URL}/${noteId}`)).data
+        return  (await axios.delete(`${BASE_URL}/${noteId}`)).data
     }
-    static async updateById(note){
-        return (await axios.patch(`${BASE_URL}/${note.id}`,note)).data
+    static async updateById(id,value){
+        return this.formateById( (await axios.patch(`${BASE_URL}/${id}`,value)).data)
+    }
+    static formateById(note){
+        return{
+            ...note,
+            id:note.id.toString()
+        }
     }
 }
