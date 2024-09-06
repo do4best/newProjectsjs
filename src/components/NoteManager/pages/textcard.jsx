@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Trash} from "react-bootstrap-icons";
-import s from "./NoteBrowse/style.module.css"
+import s from "./searchBar/style.module.css"
 
 function Textcard({title,content,subtitle,onClick,onClickTrash}) {
     const [isHovered ,setIsHovered] = useState(false)

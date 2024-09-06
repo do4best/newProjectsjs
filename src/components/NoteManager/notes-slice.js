@@ -15,9 +15,13 @@ export const notesSlice = createSlice({
         updateNote : (currenSlice,action)=>{
             const indexToDate = currenSlice.noteList.findIndex((note)=>note.id === action.payload.id)
             currenSlice.noteList[indexToDate] = action.payload
+        },
+        deleteNote : (currenSlice,action)=>{
+            const indexToDate = currenSlice.noteList.filter((note)=>note.id !== action.payload.id)
+            currenSlice.noteList = indexToDate
         }
     }
 });
 
 export const noteReducer = notesSlice.reducer;
-export const {setNoteList,addNote,updateNote} =notesSlice.actions
+export const {setNoteList,addNote,updateNote,deleteNote} =notesSlice.actions
