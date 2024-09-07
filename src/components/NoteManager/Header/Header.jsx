@@ -4,7 +4,7 @@ import logo from "../../../assets/logo.png"
 import ButtonPrimary from "../buttonPrimary/buttonPrimary.jsx";
 import {useNavigate} from "react-router-dom";
 
-function Header(props) {
+function Header() {
     const navigate = useNavigate()
     return (
         <>
