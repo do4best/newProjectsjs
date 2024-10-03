@@ -1,0 +1,8 @@
+@mixin layout{
+  display: flex;
+  justify-content: space-between;
+
+  }
+  nav{
+    @include layout
+    }
