@@ -7,9 +7,65 @@
   @include display;
   background-color: #333;
   padding: 1rem;
+  position: sticky;
+  top: 0;
 }
 .logo{
   color: white;
   font: 1.5em sans-serif;
   cursor: pointer;
+}
+.navebar-ul{
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.navebar-ul li{
+  margin: 0 1rem;
+}
+.navebar-ul a{
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.navebar-ul a:hover{
+  color:blue;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+}
+.menu-icon{
+  display: none;
+  color:white;
+  background: none;
+  cursor: pointer;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 2px 0;
+
+}
+@media (max-width: 768px) {
+  .navebar-ul{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .active {
+    display: flex;
+  }
+  .menu-icon{
+    display: block;
+  }
+
+  
 }
